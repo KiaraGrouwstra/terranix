@@ -76,6 +76,14 @@ let
     in
     {
       config = { } //
+      	# packer
+        (whitelist "packer") //
+        (whitelist "build") //
+        (whitelist "source") //
+        (whitelist "post-processor") //
+        (whitelist "post-processors") //
+
+      	# terraform
         (whitelistWithoutEmpty "data") //
         (whitelist "locals") //
         (whitelist "module") //

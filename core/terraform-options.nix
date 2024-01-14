@@ -46,6 +46,9 @@ in
 {
 
   options = {
+
+    # opentofu / terraform
+
     data = mkReferenceableOption {
       referencePrefix = "data.";
       description = ''
@@ -145,6 +148,100 @@ in
         Input Variables, which can be set by `--var=name` or by environment variables prefixt with `TF_VAR_`.
         Usually used in terraform modules or to ask for API tokens.
         See for more details : https://www.terraform.io/docs/configuration/variables.html
+      '';
+    };
+
+    # openbao / packer
+
+    packer = mkReferenceableOption {
+      referencePrefix = "packer.";
+      example = {
+        packer = {
+          required_plugins = {
+            happycloud = {
+              version = ">= 2.7.0";
+              source = "github.com/hashicorp/happycloud";
+            };
+          };
+        };
+      };
+      description = ''
+        The packer configuration block type is used to configure some behaviors
+        of Packer itself, such as the minimum required Packer version
+        needed to apply your configuration.
+        See for more details : https://developer.hashicorp.com/packer/docs/templates/hcl_templates/blocks/packer
+      '';
+    };
+    build = mkReferenceableOption {
+      referencePrefix = "build.";
+      example = {
+        build = {
+          name = "a";
+          sources = [
+            "sources.null.first-example"
+            "sources.null.second-example"
+          ];
+        };
+      };
+      description = ''
+        The `build` block defines what builders are started,
+        how to `provision` them and if necessary
+        what to do with their artifacts using `post-process`.
+        See for more details : https://developer.hashicorp.com/packer/docs/templates/hcl_templates/blocks/build
+      '';
+    };
+    source = mkReferenceableOption {
+      referencePrefix = "source.";
+      example = {
+        source = {
+          "source.happycloud.example" = {
+            image_name = "build_specific_field";
+          };
+        };
+      };
+      description = ''
+        The top-level `source` block defines reusable builder configuration blocks.
+        The build-level `source` block allows to set specific source fields.
+        Each field must be defined only once
+        and it is currently not allowed to override a value.
+        See for more details : https://developer.hashicorp.com/packer/docs/templates/hcl_templates/blocks/source
+      '';
+    };
+    post-processor = mkReferenceableOption {
+      referencePrefix = "post-processor.";
+      example = {
+        post-processor = {
+          "checksum" = {
+            checksum_types = [ "md5" "sha512" ];
+            keep_input_artifact = true;
+          };
+        };
+      };
+      description = ''
+        The `post-processor` block defines how a post-processor is configured.
+        See for more details : https://developer.hashicorp.com/packer/docs/templates/hcl_templates/blocks/build/post-processor
+      '';
+    };
+    post-processors = mkReferenceableOption {
+      referencePrefix = "post-processors.";
+      example = {
+        post-processors = {
+          "shell-local" = {
+            inline = [ "echo hello > artifice.txt" ];
+          };
+          "artifice" = {
+            files = ["artifice.txt"];
+          };
+          "checksum" = {
+            checksum_types = [ "md5" "sha512" ];
+            keep_input_artifact = true;
+          };
+        };
+      };
+      description = ''
+        The `post-processors` block allows to define lists of `post-processors`,
+        that will run from the artifact of each build.
+        See for more details : https://developer.hashicorp.com/packer/docs/templates/hcl_templates/blocks/build/post-processors
       '';
     };
   };
