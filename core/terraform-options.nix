@@ -94,7 +94,7 @@ in
     };
     required_providers = mkMagicMergeOption {
       example = {
-        required_providers = 
+        required_providers = {
           mycloud = {
             source  = "mycorp/mycloud";
             version = "~> 1.0";
