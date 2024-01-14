@@ -84,7 +84,8 @@ let
         (whitelistWithoutEmpty "resource") //
         (whitelist "provisioner") //
         (whitelist "terraform") //
-        (whitelist "variable");
+        (whitelist "variable") //
+        (whitelist "cloud");
     };
 
 in
