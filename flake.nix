@@ -3,8 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
+    nixpkgs-unfree = {
+      url = "github:numtide/nixpkgs-unfree";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-utils.url = "github:numtide/flake-utils";
-    packerix-examples.url = "github:packerix/packerix-examples";
+    # packerix-examples.url = "github:packerix/packerix-examples";
     bats-support = {
       url = "github:bats-core/bats-support";
       flake = false;
@@ -19,10 +23,11 @@
     { self
     , nixpkgs
     , flake-utils
-    , packerix-examples
+    # , packerix-examples
     , bats-support
     , bats-assert
-    }:
+    , nixpkgs-unfree
+    }@inputs:
     (flake-utils.lib.eachDefaultSystem (system:
     let pkgs = nixpkgs.legacyPackages.${system};
     in
@@ -43,7 +48,7 @@
       devShells.default = pkgs.mkShell {
         buildInputs =
           [
-            pkgs.packer
+            nixpkgs-unfree.legacyPackages.${system}.packer
             self.packages.${system}.packerix
             pkgs.treefmt
             pkgs.nixpkgs-fmt
@@ -220,13 +225,13 @@
               '';
             });
 
-      # nix flake init -t github:packerix/packerix#flake
-      templates = packerix-examples.templates // {
-        default = packerix-examples.defaultTemplate;
-      };
-      # nix flake init -t github:packerix/packerix
+      # # nix flake init -t github:packerix/packerix#flake
+      # templates = packerix-examples.templates // {
+      #   default = packerix-examples.defaultTemplate;
+      # };
+      # # nix flake init -t github:packerix/packerix
 
-      # TODO: Legacy attribute, drop soon
-      defaultTemplate = self.templates.default;
+      # # TODO: Legacy attribute, drop soon
+      # defaultTemplate = self.templates.default;
     };
 }
