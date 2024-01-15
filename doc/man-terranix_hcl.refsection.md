@@ -1,4 +1,4 @@
-# terranix vs HCL
+# packerix vs HCL
 
 The
 [nix syntax](https://nixos.org/nix/manual/)
@@ -18,7 +18,7 @@ resource "aws_instance" "web" {
 }
 ```
 
-Which is the equivalent for the following in **terranix**:
+Which is the equivalent for the following in **packerix**:
 
 ```nix
 resource."aws_instance"."web" = {
@@ -46,21 +46,21 @@ EOT
 }
 ```
 
-This won't work in terranix.
-In terranix you have to use the nix way of multi line strings.
+This won't work in packerix.
+In packerix you have to use the nix way of multi line strings.
 
 ```nix
 variable.multiline.description = ''
   Description for the multi line variable.
   The indention here is not wrong.
-  All spaces in front of the text block will be removed by terranix.
+  All spaces in front of the text block will be removed by packerix.
 '';
 ```
 
 ## escaping expressions
 
-The form `${expression}` is used by terranix and terraform.
-So, if you want to use a terraform expression in terranix,
+The form `${expression}` is used by packerix and terraform.
+So, if you want to use a terraform expression in packerix,
 you have to escape it.
 There are the two context, multi and single line strings.
 
@@ -83,7 +83,7 @@ For example :
 resource.local_file.sshConfig = {
   filename = "./ssh-config";
   content = ''
-    Host ''${ hcloud_server.terranix_test.ipv4_address }
+    Host ''${ hcloud_server.packerix_test.ipv4_address }
     IdentityFile ./sshkey
   '';
 };

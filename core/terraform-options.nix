@@ -46,9 +46,6 @@ in
 {
 
   options = {
-
-    # opentofu / terraform
-
     data = mkReferenceableOption {
       referencePrefix = "data.";
       description = ''
@@ -67,7 +64,7 @@ in
       };
       description = ''
         Define terraform variables with file scope.
-        Like modules this is terraform intern and terranix has better ways.
+        Like modules this is terraform intern and packerix has better ways.
         See for more details : https://www.terraform.io/docs/configuration/locals.html
       '';
     };
@@ -79,7 +76,7 @@ in
         A terraform module, to define multiple resources,
         for sharing or duplication.
         The terraform module system, and has nothing to
-        do with the module system of terranix or nixos.
+        do with the module system of packerix or nixos.
         See for more details : https://www.terraform.io/docs/configuration/modules.html
       '';
     };
@@ -115,25 +112,8 @@ in
         };
       };
       description = ''
-        The backbone of terraform and terranix to change and create state.
+        The backbone of terraform and packerix to change and create state.
         See for more details : https://www.terraform.io/docs/configuration/resources.html
-      '';
-    };
-    terraform = mkMagicMergeOption {
-      example = {
-        terraform = {
-          backend.s3 = {
-            bucket = "mybucket";
-            key = "path/to/my/key";
-            region = "us-east-1";
-          };
-        };
-      };
-      description = ''
-        Terraform configuration.
-        But for backends have a look at the terranix options
-        backend.etcd, backend.local and backend.s3.
-        See for more details : https://www.terraform.io/docs/configuration/terraform.html
       '';
     };
     variable = mkMagicMergeOption {
@@ -150,9 +130,6 @@ in
         See for more details : https://www.terraform.io/docs/configuration/variables.html
       '';
     };
-
-    # openbao / packer
-
     packer = mkReferenceableOption {
       referencePrefix = "packer.";
       example = {

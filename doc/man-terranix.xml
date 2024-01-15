@@ -2,19 +2,19 @@
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:xi="http://www.w3.org/2001/XInclude">
  <refmeta>
-   <refentrytitle><command>terranix</command></refentrytitle>
+   <refentrytitle><command>packerix</command></refentrytitle>
    <manvolnum>1</manvolnum>
-   <refmiscinfo class="source">terranix</refmiscinfo>
+   <refmiscinfo class="source">packerix</refmiscinfo>
  </refmeta>
 
  <refnamediv>
-   <refname><command>terranix</command></refname>
+   <refname><command>packerix</command></refname>
    <refpurpose>reconfigure a user environment</refpurpose>
  </refnamediv>
 
  <refsynopsisdiv>
   <cmdsynopsis>
-    <command>terranix</command>
+    <command>packerix</command>
     <arg>
       <group choice="req"> 
         <arg choice="plain">
@@ -55,18 +55,18 @@
   </cmdsynopsis>
  </refsynopsisdiv>
 
- <xi:include href="./man-terranix_description.refsection.xml" />
- <xi:include href="./man-terranix_options.refsection.xml" />
- <xi:include href="./man-terranix_hcl.refsection.xml" />
- <xi:include href="./man-terranix_modules.refsection.xml" />
- <xi:include href="./man-terranix_conditions.refsection.xml" />
- <xi:include href="./man-terranix_functions.refsection.xml" />
+ <xi:include href="./man-packerix_description.refsection.xml" />
+ <xi:include href="./man-packerix_options.refsection.xml" />
+ <xi:include href="./man-packerix_hcl.refsection.xml" />
+ <xi:include href="./man-packerix_modules.refsection.xml" />
+ <xi:include href="./man-packerix_conditions.refsection.xml" />
+ <xi:include href="./man-packerix_functions.refsection.xml" />
 
  <refsection>
   <title>Bugs</title>
   <para>
    Please report any bugs on the
-   <link xlink:href="https://github.com/mrVanDalo/terranix/issues">project
+   <link xlink:href="https://github.com/mrVanDalo/packerix/issues">project
    issue tracker</link>.
   </para>
  </refsection>
@@ -75,7 +75,7 @@
   <title>See also</title>
   <para>
    <citerefentry>
-   <refentrytitle>terranix-modules</refentrytitle>
+   <refentrytitle>packerix-modules</refentrytitle>
    <manvolnum>5</manvolnum> </citerefentry>
   </para>
  </refsection>

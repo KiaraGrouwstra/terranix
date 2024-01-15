@@ -1,10 +1,10 @@
 {
-  description = "terranix flake";
+  description = "packerix flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
-    terranix-examples.url = "github:terranix/terranix-examples";
+    packerix-examples.url = "github:packerix/packerix-examples";
     bats-support = {
       url = "github:bats-core/bats-support";
       flake = false;
@@ -19,7 +19,7 @@
     { self
     , nixpkgs
     , flake-utils
-    , terranix-examples
+    , packerix-examples
     , bats-support
     , bats-assert
     }:
@@ -29,13 +29,13 @@
     {
 
       # nix build
-      packages.terranix = pkgs.callPackage ./default.nix {
+      packages.packerix = pkgs.callPackage ./default.nix {
         # as long nix flake is an experimental feature;
         nix = pkgs.nixUnstable;
       };
       # nix build "manpages"
       packages.manpages = (pkgs.callPackage ./doc/default.nix { }).manPages;
-      packages.default = self.packages.${system}.terranix;
+      packages.default = self.packages.${system}.packerix;
       # TODO: Legacy attribute, drop soon
       defaultPackage = self.packages.${system}.default;
 
@@ -44,7 +44,7 @@
         buildInputs =
           [
             pkgs.terraform_0_15
-            self.packages.${system}.terranix
+            self.packages.${system}.packerix
             pkgs.treefmt
             pkgs.nixpkgs-fmt
             pkgs.shfmt
@@ -66,7 +66,7 @@
             inherit nixpkgs;
             inherit pkgs;
             inherit (pkgs) lib;
-            terranix = self.packages.${system}.terranix;
+            packerix = self.packages.${system}.packerix;
           };
           testFile = pkgs.writeText "test" ''
             load '${bats-support}/load.bash'
@@ -78,7 +78,7 @@
           type = "app";
           program = toString (pkgs.writeShellScript "test" ''
             set -e
-            echo "running terranix tests" | ${pkgs.boxes}/bin/boxes -d ian_jones -a c
+            echo "running packerix tests" | ${pkgs.boxes}/bin/boxes -d ian_jones -a c
             #cat ${testFile}
             ${pkgs.bats}/bin/bats ${testFile}
           '');
@@ -102,8 +102,8 @@
     })) // {
 
       # terraformConfiguration ast, if you want to run
-      # terranix in the repl.
-      lib.terranixConfigurationAst =
+      # packerix in the repl.
+      lib.packerixConfigurationAst =
         { system ? ""
         , pkgs ? builtins.getAttr system nixpkgs.outputs.legacyPackages
         , extraArgs ? { }
@@ -112,12 +112,12 @@
         }:
         import ./core/default.nix {
           inherit pkgs extraArgs strip_nulls;
-          terranix_config.imports = modules;
+          packerix_config.imports = modules;
         };
 
-      # terranixOptions ast, if you want to run
-      # terranix in a repl.
-      lib.terranixOptionsAst =
+      # packerixOptions ast, if you want to run
+      # packerix in a repl.
+      lib.packerixOptionsAst =
         { system ? ""
         , pkgs ? builtins.getAttr system nixpkgs.outputs.legacyPackages
         , modules ? [ ]
@@ -125,14 +125,14 @@
         , urlPrefix ? ""
         , urlSuffix ? ""
         }:
-        import ./lib/terranix-doc-json.nix {
-          terranix_modules = modules;
+        import ./lib/packerix-doc-json.nix {
+          packerix_modules = modules;
           inherit moduleRootPath urlPrefix urlSuffix pkgs;
         };
 
       # create a config.tf.json.
       # you have to either have to name a system or set pkgs.
-      lib.terranixConfiguration =
+      lib.packerixConfiguration =
         { system ? ""
         , pkgs ? builtins.getAttr system nixpkgs.outputs.legacyPackages
         , extraArgs ? { }
@@ -140,16 +140,16 @@
         , strip_nulls ? true
         }:
         let
-          terranixCore = import ./core/default.nix {
+          packerixCore = import ./core/default.nix {
             inherit pkgs extraArgs strip_nulls;
-            terranix_config.imports = modules;
+            packerix_config.imports = modules;
           };
         in
-        (pkgs.formats.json { }).generate "config.tf.json" terranixCore.config;
+        (pkgs.formats.json { }).generate "config.tf.json" packerixCore.config;
 
       # create a options.json.
       # you have to either have to name a system or set pkgs.
-      lib.terranixOptions =
+      lib.packerixOptions =
         { system ? ""
         , pkgs ? builtins.getAttr system nixpkgs.outputs.legacyPackages
         , modules ? [ ]
@@ -158,14 +158,14 @@
         , urlSuffix ? ""
         }:
         let
-          terranixOptions = import ./lib/terranix-doc-json.nix {
-            terranix_modules = modules;
+          packerixOptions = import ./lib/packerix-doc-json.nix {
+            packerix_modules = modules;
             inherit moduleRootPath urlPrefix urlSuffix pkgs;
           };
         in
-        pkgs.runCommand "terranix-options" { }
+        pkgs.runCommand "packerix-options" { }
           ''
-            cat ${terranixOptions}/options.json | \
+            cat ${packerixOptions}/options.json | \
               ${pkgs.jq}/bin/jq '
                 del(.data) |
                 del(.locals) |
@@ -179,34 +179,34 @@
           '';
 
       # deprecated
-      lib.buildTerranix = nixpkgs.lib.warn "buildTerranix will be removed in 3.0.0 use terranixConfiguration instead"
-        ({ pkgs, terranix_config, ... }@terranix_args:
-          let terranixCore = import ./core/default.nix terranix_args;
+      lib.buildPackerix = nixpkgs.lib.warn "buildPackerix will be removed in 3.0.0 use packerixConfiguration instead"
+        ({ pkgs, packerix_config, ... }@packerix_args:
+          let packerixCore = import ./core/default.nix packerix_args;
           in
           pkgs.writeTextFile {
             name = "config.tf.json";
-            text = builtins.toJSON terranixCore.config;
+            text = builtins.toJSON packerixCore.config;
           });
 
       # deprecated
       lib.buildOptions =
-        nixpkgs.lib.warn "buildOptions will be removed in 3.0.0 use terranixOptions instead"
+        nixpkgs.lib.warn "buildOptions will be removed in 3.0.0 use packerixOptions instead"
           ({ pkgs
-           , terranix_modules
+           , packerix_modules
            , moduleRootPath ? "/"
            , urlPrefix ? ""
            , urlSuffix ? ""
            , ...
-           }@terranix_args:
+           }@packerix_args:
             let
-              terranixOptions = import ./lib/terranix-doc-json.nix terranix_args;
+              packerixOptions = import ./lib/packerix-doc-json.nix packerix_args;
             in
             pkgs.stdenv.mkDerivation {
-              name = "terranix-options";
+              name = "packerix-options";
               src = self;
               installPhase = ''
                 mkdir -p $out
-                cat ${terranixOptions}/options.json \
+                cat ${packerixOptions}/options.json \
                   | ${pkgs.jq}/bin/jq '
                     del(.data) |
                     del(.locals) |
@@ -220,11 +220,11 @@
               '';
             });
 
-      # nix flake init -t github:terranix/terranix#flake
-      templates = terranix-examples.templates // {
-        default = terranix-examples.defaultTemplate;
+      # nix flake init -t github:packerix/packerix#flake
+      templates = packerix-examples.templates // {
+        default = packerix-examples.defaultTemplate;
       };
-      # nix flake init -t github:terranix/terranix
+      # nix flake init -t github:packerix/packerix
 
       # TODO: Legacy attribute, drop soon
       defaultTemplate = self.templates.default;

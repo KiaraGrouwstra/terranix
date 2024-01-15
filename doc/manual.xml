@@ -1,17 +1,17 @@
 <book xmlns="http://docbook.org/ns/docbook"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       xmlns:xi="http://www.w3.org/2001/XInclude"
-      xml:id="book-terranix-manual"
+      xml:id="book-packerix-manual"
       version="5.0">
   <info>
-    <title>terranix Manual</title>
+    <title>packerix Manual</title>
   </info>
   <appendix xml:id="ch-options">
-    <title>terranix default modules</title>
-    <xi:include href="./nmd-result/terranix-options.xml" />
+    <title>packerix default modules</title>
+    <xi:include href="./nmd-result/packerix-options.xml" />
   </appendix>
   <appendix xml:id="ch-tools">
     <title>Tools</title>
-    <xi:include href="./man-terranix.xml" />
+    <xi:include href="./man-packerix.xml" />
   </appendix>
 </book>

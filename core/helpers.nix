@@ -1,5 +1,5 @@
 # override to the standard nixpkgs lib, adding
-# terranix-related helpers
+# packerix-related helpers
 pkgs: self: super: {
   tf = {
     # escape ${} to create a terraform reference string

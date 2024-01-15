@@ -1,7 +1,7 @@
 <refsection xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="modules">
   <title>MODULES</title>
   <para>
-    The real power behind NixOS and terranix is the module system, which
+    The real power behind NixOS and packerix is the module system, which
     is fundamentally different to the Terraform Module system. Detailed
     information can be obtained at the
     <link xlink:href="https://nixos.wiki/wiki/NixOS_Modules">NixOS

@@ -3,26 +3,26 @@ A NixOS way to create `terraform.json` files.
 
 # Documentation
 
-See [terranix.org](https://terranix.org/documentation/) for documentation.
-It also has a [Getting Started](https://terranix.org/documentation/getting-started/) page.
+See [packerix.org](https://packerix.org/documentation/) for documentation.
+It also has a [Getting Started](https://packerix.org/documentation/getting-started/) page.
 
 ## Manpages
 
-* `man terranix`
-* `man terranix-modules`
-* `man terranix-doc-json`
-* `man terranix-doc-man`
+* `man packerix`
+* `man packerix-modules`
+* `man packerix-doc-json`
+* `man packerix-doc-man`
 
 ## preload
 
-Terranix comes with predefined modules which can be used as
+Packerix comes with predefined modules which can be used as
 inspiration and to create logic on top.
 They live in
 [./modules](./modules/).
 
 # Community
 
-Join us at the `#terranix:terranix.org` matrix channel.
+Join us at the `#packerix:packerix.org` matrix channel.
 
 # See also
 

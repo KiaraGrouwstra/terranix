@@ -3,7 +3,7 @@
 set -eu -o pipefail
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-DEFAULT_CONFIG="$DIR/../lib/terranix-doc-json.nix"
+DEFAULT_CONFIG="$DIR/../lib/packerix-doc-json.nix"
 FILE="./config.nix"
 OFFLINE=""
 QUIET=""
@@ -15,8 +15,8 @@ PKGS="<nixpkgs>"
 
 function usage() {
   cat <<EOF
-Usage: terranix-doc-json [-q|--quiet] [--trace|--show-trace] [--path path] [--url|--url-prefix prefix] [--url-suffix suffix][--pkgs path] [path]
-       terranix-doc-json --help
+Usage: packerix-doc-json [-q|--quiet] [--trace|--show-trace] [--path path] [--url|--url-prefix prefix] [--url-suffix suffix][--pkgs path] [path]
+       packerix-doc-json --help
 
   -q | --quiet   dont print anything except the json
 
@@ -100,7 +100,7 @@ TERRAFORM_JSON=$( nix-build \
       moduleRootPath = \"$RELATIVE_PATH\";
       urlPrefix = \"$URL_PREFIX\";
       urlSuffix = \"$URL_SUFFIX\";
-      terranix_modules = [{ imports = [ ${FILE} ]; }];
+      packerix_modules = [{ imports = [ ${FILE} ]; }];
     }"
 )
 

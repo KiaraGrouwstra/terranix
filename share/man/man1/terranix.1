@@ -1,13 +1,13 @@
 '\" t
-.\"     Title: \fBterranix\fR
+.\"     Title: \fBpackerix\fR
 .\"    Author: Ingolf Wagner
 .\" Generator: DocBook XSL Stylesheets v1.79.2 <http://docbook.sf.net/>
 .\"      Date: 01/01/1980
-.\"    Manual: terranix reference pages
-.\"    Source: terranix
+.\"    Manual: packerix reference pages
+.\"    Source: packerix
 .\"  Language: English
 .\"
-.TH "\FBTERRANIX\FR" "1" "01/01/1980" "terranix" "terranix reference pages"
+.TH "\FBTERRANIX\FR" "1" "01/01/1980" "packerix" "packerix reference pages"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -30,15 +30,15 @@
 .\" * MAIN CONTENT STARTS HERE *
 .\" -----------------------------------------------------------------
 .SH "NAME"
-terranix \- reconfigure a user environment
+packerix \- reconfigure a user environment
 .SH "SYNOPSIS"
-.HP \w'\fBterranix\fR\ 'u
-\fBterranix\fR [{\ \-q\ |\ \-\-quiet\ }] [{\ \-\-trace\ |\ \-\-show\-trace\ }] [{\ \-n\ |\ \-\-with\-nulls\ }] [\fIpath\fR]
+.HP \w'\fBpackerix\fR\ 'u
+\fBpackerix\fR [{\ \-q\ |\ \-\-quiet\ }] [{\ \-\-trace\ |\ \-\-show\-trace\ }] [{\ \-n\ |\ \-\-with\-nulls\ }] [\fIpath\fR]
 .br
 \-\-help
 .SH "DESCRIPTION"
 .PP
-Terranix is a NixOS way to generate terraform json\&. You can create modules like you would in NixOS\&.
+Packerix is a NixOS way to generate terraform json\&. You can create modules like you would in NixOS\&.
 .PP
 path
 .RS 4
@@ -57,7 +57,7 @@ run
 .RS 4
 .\}
 .nf
-terranix | jq
+packerix | jq
 .fi
 .if n \{\
 .RE
@@ -71,7 +71,7 @@ run
 .RS 4
 .\}
 .nf
-terranix \&./path/my\-config\&.nix | jq
+packerix \&./path/my\-config\&.nix | jq
 .fi
 .if n \{\
 .RE
@@ -83,7 +83,7 @@ To create a JSON file and run terraform
 .RS 4
 .\}
 .nf
-terranix > config\&.tf\&.json && terraform init && terraform apply
+packerix > config\&.tf\&.json && terraform init && terraform apply
 .fi
 .if n \{\
 .RE
@@ -137,7 +137,7 @@ resource "aws_instance" "web" {
 .\}
 .PP
 Which is the equivalent for the following in
-\fBterranix\fR:
+\fBpackerix\fR:
 .sp
 .if n \{\
 .RS 4
@@ -183,7 +183,7 @@ EOT
 .RE
 .\}
 .PP
-This won\(cqt work in terranix\&. In terranix you have to use the nix way of multi line strings\&.
+This won\(cqt work in packerix\&. In packerix you have to use the nix way of multi line strings\&.
 .sp
 .if n \{\
 .RS 4
@@ -192,7 +192,7 @@ This won\(cqt work in terranix\&. In terranix you have to use the nix way of mul
 variable\&.multiline\&.description = \*(Aq\*(Aq
   Description for the multi line variable\&.
   The indention here is not wrong\&.
-  All spaces in front of the text block will be removed by terranix\&.
+  All spaces in front of the text block will be removed by packerix\&.
 \*(Aq\*(Aq;
 .fi
 .if n \{\
@@ -202,7 +202,7 @@ variable\&.multiline\&.description = \*(Aq\*(Aq
 .PP
 The form
 ${expression}
-is used by terranix and terraform\&. So, if you want to use a terraform expression in terranix, you have to escape it\&. There are the two context, multi and single line strings\&.
+is used by packerix and terraform\&. So, if you want to use a terraform expression in packerix, you have to escape it\&. There are the two context, multi and single line strings\&.
 .sp
 .it 1 an-trap
 .nr an-no-space-flag 1
@@ -245,7 +245,7 @@ In multi line strings, you escape via
 resource\&.local_file\&.sshConfig = {
   filename = "\&./ssh\-config";
   content = \*(Aq\*(Aq
-    Host \*(Aq\*(Aq${ hcloud_server\&.terranix_test\&.ipv4_address }
+    Host \*(Aq\*(Aq${ hcloud_server\&.packerix_test\&.ipv4_address }
     IdentityFile \&./sshkey
   \*(Aq\*(Aq;
 };
@@ -256,7 +256,7 @@ resource\&.local_file\&.sshConfig = {
 .RE
 .SH "MODULES"
 .PP
-The real power behind NixOS and terranix is the module system, which is fundamentally different to the Terraform Module system\&. Detailed information can be obtained at the
+The real power behind NixOS and packerix is the module system, which is fundamentally different to the Terraform Module system\&. Detailed information can be obtained at the
 \m[blue]\fBNixOS Wiki\fR\m[]\&.
 .SS "Module Structure"
 .PP
@@ -453,7 +453,7 @@ Please report any bugs on the
 \m[blue]\fBproject issue tracker\fR\m[]\&.
 .SH "SEE ALSO"
 .PP
-\fBterranix-modules\fR(5)
+\fBpackerix-modules\fR(5)
 .SH "AUTHOR"
 .PP
 \fBIngolf Wagner\fR

@@ -3,19 +3,19 @@
           xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <refmeta>
-    <refentrytitle><filename>terranix-doc-man</filename></refentrytitle>
+    <refentrytitle><filename>packerix-doc-man</filename></refentrytitle>
     <manvolnum>1</manvolnum>
-    <refmiscinfo class="source">terranix module documentation renderer</refmiscinfo>
+    <refmiscinfo class="source">packerix module documentation renderer</refmiscinfo>
   </refmeta>
   
   <refnamediv>
-    <refname><filename>terranix-doc-man</filename></refname>
-    <refpurpose>terranix configuration options renderer</refpurpose>
+    <refname><filename>packerix-doc-man</filename></refname>
+    <refpurpose>packerix configuration options renderer</refpurpose>
   </refnamediv>
   
   <refsynopsisdiv>
     <cmdsynopsis>
-      <command>terranix-doc-man</command>
+      <command>packerix-doc-man</command>
       <arg>
         --offline
       </arg>
@@ -25,14 +25,14 @@
     </cmdsynopsis>
   </refsynopsisdiv>
   
-  <xi:include href="./man-terranix-doc_description.refsection.xml" />
-  <xi:include href="./man-terranix-doc_options.refsection.xml" />
+  <xi:include href="./man-packerix-doc_description.refsection.xml" />
+  <xi:include href="./man-packerix-doc_options.refsection.xml" />
   
   <refsection>
     <title>See also</title>
     <para>
       <citerefentry>
-        <refentrytitle>terranix</refentrytitle>
+        <refentrytitle>packerix</refentrytitle>
         <manvolnum>1</manvolnum>
       </citerefentry>
     </para>

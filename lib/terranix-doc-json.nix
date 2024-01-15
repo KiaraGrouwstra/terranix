@@ -4,7 +4,7 @@
 , moduleRootPath ? "/"
 , urlPrefix ? "https://example.com"
 , urlSuffix ? ""
-, terranix_modules ? [ ]
+, packerix_modules ? [ ]
 , ...
 }:
 
@@ -34,7 +34,7 @@ let
   };
 
   modulesDocs = nmd.buildModulesDocs {
-    modules = terranix_modules ++ [
+    modules = packerix_modules ++ [
       (import ../core/terraform-options.nix {
         inherit lib pkgs;
         config = { };
@@ -43,7 +43,7 @@ let
     moduleRootPaths = [ moduleRootPath ];
     mkModuleUrl = path: "${urlPrefix}${path}${urlSuffix}";
     channelName = "";
-    docBook.id = "terranix-options";
+    docBook.id = "packerix-options";
   };
 
 in

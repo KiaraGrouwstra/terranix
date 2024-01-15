@@ -1,13 +1,13 @@
 '\" t
-.\"     Title: terranix-modules
+.\"     Title: packerix-modules
 .\"    Author: Ingolf Wagner
 .\" Generator: DocBook XSL Stylesheets v1.79.2 <http://docbook.sf.net/>
 .\"      Date: 01/01/1980
-.\"    Manual: terranix reference pages
-.\"    Source: terranix module documentation
+.\"    Manual: packerix reference pages
+.\"    Source: packerix module documentation
 .\"  Language: English
 .\"
-.TH "TERRANIX\-MODULES" "5" "01/01/1980" "terranix module documentation" "terranix reference pages"
+.TH "TERRANIX\-MODULES" "5" "01/01/1980" "packerix module documentation" "packerix reference pages"
 .\" -----------------------------------------------------------------
 .\" * Define some portability stuff
 .\" -----------------------------------------------------------------
@@ -30,12 +30,12 @@
 .\" * MAIN CONTENT STARTS HERE *
 .\" -----------------------------------------------------------------
 .SH "NAME"
-terranix-modules \- terranix configuration options
+packerix-modules \- packerix configuration options
 .SH "DESCRIPTION"
 .PP
 Theses are the modules you can use in your
 config\&.nix
-which are delivered by default by terranix\&.
+which are delivered by default by packerix\&.
 .SH "OPTIONS"
 .PP
 You can use the following options in
@@ -53,7 +53,7 @@ null
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -66,7 +66,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -82,7 +82,7 @@ null
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -95,7 +95,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -111,7 +111,7 @@ null
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -127,7 +127,7 @@ null
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -140,7 +140,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -156,7 +156,7 @@ null
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -169,7 +169,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -182,7 +182,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -195,7 +195,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -215,7 +215,7 @@ bool, int, float or str
 .PP
 \fBlocals\fR
 .RS 4
-Define terraform variables with file scope\&. Like modules this is terraform intern and terranix has better ways\&. See for more details : https://www\&.terraform\&.io/docs/configuration/locals\&.html
+Define terraform variables with file scope\&. Like modules this is terraform intern and packerix has better ways\&. See for more details : https://www\&.terraform\&.io/docs/configuration/locals\&.html
 .sp
 \fIType:\fR
 bool, int, float or str
@@ -229,7 +229,7 @@ bool, int, float or str
 .PP
 \fBmodule\fR
 .RS 4
-A terraform module, to define multiple resources, for sharing or duplication\&. The terraform module system, and has nothing to do with the module system of terranix or nixos\&. See for more details : https://www\&.terraform\&.io/docs/configuration/modules\&.html
+A terraform module, to define multiple resources, for sharing or duplication\&. The terraform module system, and has nothing to do with the module system of packerix or nixos\&. See for more details : https://www\&.terraform\&.io/docs/configuration/modules\&.html
 .sp
 \fIType:\fR
 bool, int, float or str
@@ -281,7 +281,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/provisioner\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/provisioner\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -297,7 +297,7 @@ attribute set of submodules
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -310,7 +310,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -326,7 +326,7 @@ null
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -339,7 +339,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -355,7 +355,7 @@ null
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -371,7 +371,7 @@ attribute set of submodules
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -384,7 +384,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -400,7 +400,7 @@ attribute set of submodules
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -413,7 +413,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -426,7 +426,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -439,13 +439,13 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
 \fBresource\fR
 .RS 4
-The backbone of terraform and terranix to change and create state\&. See for more details : https://www\&.terraform\&.io/docs/configuration/resources\&.html
+The backbone of terraform and packerix to change and create state\&. See for more details : https://www\&.terraform\&.io/docs/configuration/resources\&.html
 .sp
 \fIType:\fR
 bool, int, float or str
@@ -459,7 +459,7 @@ bool, int, float or str
 .PP
 \fBterraform\fR
 .RS 4
-Terraform configuration\&. But for backends have a look at the terranix options backend\&.etcd, backend\&.local and backend\&.s3\&. See for more details : https://www\&.terraform\&.io/docs/configuration/terraform\&.html
+Terraform configuration\&. But for backends have a look at the packerix options backend\&.etcd, backend\&.local and backend\&.s3\&. See for more details : https://www\&.terraform\&.io/docs/configuration/terraform\&.html
 .sp
 \fIType:\fR
 bool, int, float or str
@@ -486,7 +486,7 @@ attribute set of attribute set of submoduless
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/users\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/users\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -505,7 +505,7 @@ null
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<terranix/modules/users\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/users\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -524,7 +524,7 @@ bool, int, float or str
 .RE
 .SH "SEE ALSO"
 .PP
-\fBterranix\fR(1)
+\fBpackerix\fR(1)
 .SH "AUTHOR"
 .PP
 \fBIngolf Wagner\fR

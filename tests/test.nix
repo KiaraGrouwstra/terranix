@@ -1,18 +1,18 @@
-{ nixpkgs, pkgs, lib, terranix, ... }:
+{ nixpkgs, pkgs, lib, packerix, ... }:
 with lib;
 let
   # example:
   #[ {
   #  text = "assert : don't trigger error on true mkAssert ";
-  #  file = ./terranix-tests/05.nix;
+  #  file = ./packerix-tests/05.nix;
   #  success = true;
-  #  outputFile = ./terranix-tests/05.nix.output;
+  #  outputFile = ./packerix-tests/05.nix.output;
   #} ]
-  terranix-tests = import ./terranix-tests.nix;
-  terranix-test-template = { text, file, options ? [ ], success ? true, outputFile ? "", partialMatchOutput ? false, ... }:
+  packerix-tests = import ./packerix-tests.nix;
+  packerix-test-template = { text, file, options ? [ ], success ? true, outputFile ? "", partialMatchOutput ? false, ... }:
     ''
       @test "${text}" {
-      run ${terranix}/bin/terranix ${concatStringsSep " " options} --pkgs ${nixpkgs} --quiet ${file}
+      run ${packerix}/bin/packerix ${concatStringsSep " " options} --pkgs ${nixpkgs} --quiet ${file}
 
       # edit output to make sure no nix store paths are included
       # - they cause tests to fail depending on environment
@@ -24,11 +24,11 @@ let
     '';
 
 
-  terranix-doc-json-tests = import ./terranix-doc-json-tests.nix;
-  terranix-doc-json-test-template = { text, path ? "", file, options ? [ ], success ? true, outputFile ? "", ... }:
+  packerix-doc-json-tests = import ./packerix-doc-json-tests.nix;
+  packerix-doc-json-test-template = { text, path ? "", file, options ? [ ], success ? true, outputFile ? "", ... }:
     ''
       @test "${text}" {
-      run ${terranix}/bin/terranix-doc-json --quiet ${optionalString (path != "") "--path ${path}"} ${concatStringsSep " " options} --pkgs ${nixpkgs} --quiet ${file}
+      run ${packerix}/bin/packerix-doc-json --quiet ${optionalString (path != "") "--path ${path}"} ${concatStringsSep " " options} --pkgs ${nixpkgs} --quiet ${file}
       ${if success then "assert_success" else "assert_failure"}
       ${optionalString (outputFile != "") "assert_output ${escapeShellArg (fileContents outputFile)}"}
       }
@@ -36,5 +36,5 @@ let
 
 
 in
-(map terranix-test-template terranix-tests) ++
-(map terranix-doc-json-test-template terranix-doc-json-tests)
+(map packerix-test-template packerix-tests) ++
+(map packerix-doc-json-test-template packerix-doc-json-tests)

@@ -3,7 +3,7 @@
 set -eu -o pipefail
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-DEFAULT_CONFIG="$DIR/../lib/terranix-doc-man.nix"
+DEFAULT_CONFIG="$DIR/../lib/packerix-doc-man.nix"
 FILE="./config.nix"
 OFFLINE=""
 QUIET=""
@@ -12,8 +12,8 @@ PKGS="<nixpkgs>"
 
 function usage() {
     cat <<EOF
-Usage: terranix-doc-man [-q|--quiet] [--trace|--show-trace] [--pkgs path] [path]
-       terranix --help
+Usage: packerix-doc-man [-q|--quiet] [--trace|--show-trace] [--pkgs path] [path]
+       packerix --help
 
   -q | --quiet   dont print anything except the json
 
@@ -73,13 +73,13 @@ TERRAFORM_JSON=$( nix-build \
     $TRACE \
     --expr "with import $PKGS {}; callPackage $DEFAULT_CONFIG {
         inherit pkgs;
-        terranix_modules = [{ imports = [ ${FILE} ]; }];
+        packerix_modules = [{ imports = [ ${FILE} ]; }];
     }"
 )
 
 NIX_BUILD_EXIT_CODE=$?
 if [[ $NIX_BUILD_EXIT_CODE -eq 0 ]]
 then
-    man "$TERRAFORM_JSON/share/man/man5/terranix-doc-man.5"
+    man "$TERRAFORM_JSON/share/man/man5/packerix-doc-man.5"
 fi
 exit $NIX_BUILD_EXIT_CODE

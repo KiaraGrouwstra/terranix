@@ -1,8 +1,8 @@
-# terranix core
+# packerix core
 # -------------
 { pkgs ? import <nixpkgs> { }
 , extraArgs ? { }
-, terranix_config
+, packerix_config
 , strip_nulls ? true
 }:
 
@@ -40,7 +40,7 @@ let
           recursiveSanitized;
     };
 
-  # pkgs.lib extended with terranix-specific utils
+  # pkgs.lib extended with packerix-specific utils
   lib' = pkgs.lib.extend (import ./helpers.nix pkgs);
 
   # evaluate given config.
@@ -59,7 +59,7 @@ let
   # create the final result
   # by whitelisting every
   # parameter which is needed by terraform
-  terranix = configuration:
+  packerix = configuration:
     let
       evaluated = evaluateConfiguration configuration;
       result = sanitize evaluated.config;
@@ -76,24 +76,20 @@ let
     in
     {
       config = { } //
-      	# packer
         (whitelist "packer") //
         (whitelist "build") //
         (whitelist "source") //
         (whitelist "post-processor") //
         (whitelist "post-processors") //
-
-      	# terraform
         (whitelistWithoutEmpty "data") //
         (whitelist "locals") //
         (whitelist "module") //
         (whitelist "output") //
         (whitelist "provider") //
         (whitelistWithoutEmpty "resource") //
-        (whitelist "terraform") //
         (whitelist "variable");
     };
 
 in
-terranix terranix_config
+packerix packerix_config
 

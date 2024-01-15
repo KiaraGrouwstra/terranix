@@ -4,13 +4,13 @@ with lib;
 
 let
 
-  cfg = config.testing-terranix;
+  cfg = config.testing-packerix;
 
 in
 {
 
-  options.testing-terranix = {
-    enable = mkEnableOption "enable testing-terranix";
+  options.testing-packerix = {
+    enable = mkEnableOption "enable testing-packerix";
   };
 
   config = mkIf cfg.enable { };

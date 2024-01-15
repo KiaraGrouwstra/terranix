@@ -3,13 +3,13 @@
           xmlns:xi="http://www.w3.org/2001/XInclude">
 
   <refmeta>
-    <refentrytitle><filename>terranix-doc-man</filename></refentrytitle>
+    <refentrytitle><filename>packerix-doc-man</filename></refentrytitle>
     <manvolnum>5</manvolnum>
-    <refmiscinfo class="source">terranix module documentation</refmiscinfo>
+    <refmiscinfo class="source">packerix module documentation</refmiscinfo>
   </refmeta>
 
   <refnamediv>
-    <refname><filename>terranix-doc-man</filename></refname>
+    <refname><filename>packerix-doc-man</filename></refname>
     <refpurpose>show options available</refpurpose>
   </refnamediv>
 
@@ -26,18 +26,18 @@
       You can use the following options in
       <filename>config.nix</filename>:
     </para>
-    <xi:include href="./nmd-result/terranix-options.xml" />
+    <xi:include href="./nmd-result/packerix-options.xml" />
   </refsection>
 
   <refsection>
     <title>See also</title>
     <para>
       <citerefentry>
-        <refentrytitle>terranix-modules</refentrytitle>
+        <refentrytitle>packerix-modules</refentrytitle>
         <manvolnum>5</manvolnum>
       </citerefentry>
       <citerefentry>
-        <refentrytitle>terranix</refentrytitle>
+        <refentrytitle>packerix</refentrytitle>
         <manvolnum>1</manvolnum>
       </citerefentry>
     </para>

@@ -1,6 +1,6 @@
 # MODULES
 
-The real power behind NixOS and terranix
+The real power behind NixOS and packerix
 is the module system, which is fundamentally different to the
 Terraform Module system.
 Detailed information can be obtained at the

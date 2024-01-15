@@ -1,5 +1,5 @@
-<refsection xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="terranix-vs-hcl">
-  <title>terranix vs HCL</title>
+<refsection xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="packerix-vs-hcl">
+  <title>packerix vs HCL</title>
   <para>
     The <link xlink:href="https://nixos.org/nix/manual/">nix
     syntax</link> is similiar to the
@@ -21,7 +21,7 @@ resource &quot;aws_instance&quot; &quot;web&quot; {
 </programlisting>
   <para>
     Which is the equivalent for the following in
-    <emphasis role="strong">terranix</emphasis>:
+    <emphasis role="strong">packerix</emphasis>:
   </para>
   <programlisting language="bash">
 resource.&quot;aws_instance&quot;.&quot;web&quot; = {
@@ -53,23 +53,23 @@ EOT
 }
 </programlisting>
     <para>
-      This won’t work in terranix. In terranix you have to use the nix
+      This won’t work in packerix. In packerix you have to use the nix
       way of multi line strings.
     </para>
     <programlisting language="bash">
 variable.multiline.description = ''
   Description for the multi line variable.
   The indention here is not wrong.
-  All spaces in front of the text block will be removed by terranix.
+  All spaces in front of the text block will be removed by packerix.
 '';
 </programlisting>
   </refsection>
   <refsection xml:id="escaping-expressions">
     <title>escaping expressions</title>
     <para>
-      The form <literal>${expression}</literal> is used by terranix and
+      The form <literal>${expression}</literal> is used by packerix and
       terraform. So, if you want to use a terraform expression in
-      terranix, you have to escape it. There are the two context, multi
+      packerix, you have to escape it. There are the two context, multi
       and single line strings.
     </para>
     <refsection xml:id="escaping-expressions-in-single-line-strings">
@@ -93,7 +93,7 @@ provider.hcloud.token = &quot;\${var.hcloud_token}&quot;;
 resource.local_file.sshConfig = {
   filename = &quot;./ssh-config&quot;;
   content = ''
-    Host ''${ hcloud_server.terranix_test.ipv4_address }
+    Host ''${ hcloud_server.packerix_test.ipv4_address }
     IdentityFile ./sshkey
   '';
 };

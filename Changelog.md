@@ -27,12 +27,12 @@
 
 ## [2.5.3] - 2022-01-07
 
-- re-adding man pages for terranix, terranix-modules, terranix-doc-json and terranix-doc-man.
+- re-adding man pages for packerix, packerix-modules, packerix-doc-json and packerix-doc-man.
 
 ## [2.5.2] - 2021-11-17
 
-- add terranixConfigurationAst
-- add terranixOptionAst
+- add packerixConfigurationAst
+- add packerixOptionAst
 
 ## [2.5.1] - 2021-11-13
 
@@ -40,19 +40,19 @@
 
 ## [2.5.0] - 2021-11-07
 
-- add terranixConfiguration replacement for buildTerranix
-- add terranixOptions replacement for buildOptions
-- fix [#18](https://github.com/terranix/terranix/issues/18): empty sets will not be converted to `null` anymore.
+- add packerixConfiguration replacement for buildPackerix
+- add packerixOptions replacement for buildOptions
+- fix [#18](https://github.com/packerix/packerix/issues/18): empty sets will not be converted to `null` anymore.
 
 ## [2.4.0] - 2021-10-10
 
-- add flake support `buildTerranix`
+- add flake support `buildPackerix`
 - add flake support `buildOptions`
-- extract examples to [terranix-examples](https://github.com/terranix/terranix-examples)
+- extract examples to [packerix-examples](https://github.com/packerix/packerix-examples)
 
 ## [2.3.0] - 2020-09-26
 
-- use bash scripts instead of lib.nix, to put terranix in nixpgks
+- use bash scripts instead of lib.nix, to put packerix in nixpgks
 - add `--pkgs` option to commands to allow overriding/pinning nixpkgs on the command line
 - add `pkgs` parameter to `core/default.nix` to allow pinning packages when calling `core/` directly from Nix.
 
@@ -82,10 +82,10 @@
         
 ## [2.2.0] - 2020-01-27
 
-- add man-pages for terranix-doc commands
+- add man-pages for packerix-doc commands
 - module cleanup and refactoring
 - add terraform-doc-man
-- add terranix-doc-json
+- add packerix-doc-json
 - add ssh key to aws example
 - add nixos-server-on-aws example
 

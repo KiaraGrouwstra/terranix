@@ -12,8 +12,8 @@ PKGS="<nixpkgs>"
 
 function usage() {
   cat <<EOF
-Usage: terranix [-q|--quiet] [--trace|--show-trace] [--with-nulls] [--pkgs path] [path]
-       terranix --help
+Usage: packerix [-q|--quiet] [--trace|--show-trace] [--with-nulls] [--pkgs path] [path]
+       packerix --help
 
   -q | --quiet   dont print anything except the json
 
@@ -78,13 +78,13 @@ TERRAFORM_JSON=$( nix-build \
     --expr "
 let
   pkgs = import $PKGS {};
-  terranixCore = import $DEFAULT_CONFIG {
+  packerixCore = import $DEFAULT_CONFIG {
     inherit pkgs;
-    terranix_config = { imports = [ <config> ]; };
+    packerix_config = { imports = [ <config> ]; };
     strip_nulls = $STRIP_NULLS;
   };
 in
-  { run = (pkgs.formats.json { }).generate \"config.tf.json\" terranixCore.config; }
+  { run = (pkgs.formats.json { }).generate \"config.tf.json\" packerixCore.config; }
 " )
 
 NIX_BUILD_EXIT_CODE=$?

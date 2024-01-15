@@ -1,8 +1,8 @@
-# entry point for terranix
+# entry point for packerix
 
 let
   configuration = import ./default.nix {
-    terranix_config = { imports = [ <config> ]; };
+    packerix_config = { imports = [ <config> ]; };
   };
 in
 

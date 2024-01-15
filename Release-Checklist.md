@@ -9,5 +9,5 @@
 ## After release
 
 * update nixos/nixpkgs
-* update terranix.org getting started commit and checksum
+* update packerix.org getting started commit and checksum
 * nix-shell-mix

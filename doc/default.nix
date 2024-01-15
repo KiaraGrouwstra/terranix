@@ -40,18 +40,18 @@ let
       ++ [ scrubbedPkgsModule ];
     moduleRootPaths = [ ./.. ];
     mkModuleUrl = path:
-      "https://github.com/mrVanDalo/terranix/blob/master/${path}#blob-path";
-    channelName = "terranix";
-    docBook.id = "terranix-options";
+      "https://github.com/mrVanDalo/packerix/blob/master/${path}#blob-path";
+    channelName = "packerix";
+    docBook.id = "packerix-options";
   };
 
   docs = nmd.buildDocBookDocs {
-    pathName = "terranix";
+    pathName = "packerix";
     modulesDocs = [ hmModulesDocs ];
     documentsDirectory = ./.;
     chunkToc = ''
       <toc>
-        <d:tocentry xmlns:d="http://docbook.org/ns/docbook" linkend="book-terranix-manual"><?dbhtml filename="index.html"?>
+        <d:tocentry xmlns:d="http://docbook.org/ns/docbook" linkend="book-packerix-manual"><?dbhtml filename="index.html"?>
           <d:tocentry linkend="ch-options"><?dbhtml filename="options.html"?></d:tocentry>
           <d:tocentry linkend="ch-tools"><?dbhtml filename="tools.html"?></d:tocentry>
           <d:tocentry linkend="ch-release-notes"><?dbhtml filename="release-notes.html"?></d:tocentry>
