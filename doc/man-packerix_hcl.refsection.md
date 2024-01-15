@@ -34,7 +34,7 @@ The same holds for `variable`, `output`, `data` and `provider`.
 
 ## multi line strings
 
-In terraform you can create multi line strings using the `heredoc` style
+In packer you can create multi line strings using the `heredoc` style
 
 ```hcl
 variable "multiline" {
@@ -59,8 +59,8 @@ variable.multiline.description = ''
 
 ## escaping expressions
 
-The form `${expression}` is used by packerix and terraform.
-So, if you want to use a terraform expression in packerix,
+The form `${expression}` is used by packerix and packer.
+So, if you want to use a packer expression in packerix,
 you have to escape it.
 There are the two context, multi and single line strings.
 

@@ -1,4 +1,4 @@
-# manage backend configurations and terraform_remote_state configurations
+# manage backend configurations and packer_remote_state configurations
 { config, lib, ... }:
 
 with lib;
@@ -81,7 +81,7 @@ in
     type = with types; nullOr localSubmodule;
     description = ''
       local backend
-      https://www.terraform.io/docs/backends/types/local.html
+      https://www.packer.io/docs/backends/types/local.html
     '';
   };
 
@@ -90,7 +90,7 @@ in
     type = with types; attrsOf localSubmodule;
     description = ''
       local remote state
-      https://www.terraform.io/docs/backends/types/local.html
+      https://www.packer.io/docs/backends/types/local.html
     '';
   };
 
@@ -99,7 +99,7 @@ in
     type = with types; nullOr s3Submodule;
     description = ''
       s3 backend
-      https://www.terraform.io/docs/backends/types/s3.html
+      https://www.packer.io/docs/backends/types/s3.html
     '';
   };
 
@@ -108,7 +108,7 @@ in
     type = with types; attrsOf s3Submodule;
     description = ''
       s3 remote state
-      https://www.terraform.io/docs/backends/types/s3.html
+      https://www.packer.io/docs/backends/types/s3.html
     '';
   };
 
@@ -117,7 +117,7 @@ in
     type = with types; nullOr etcdSubmodule;
     description = ''
       etcd backend
-      https://www.terraform.io/docs/backends/types/etcd.html
+      https://www.packer.io/docs/backends/types/etcd.html
     '';
   };
 
@@ -126,7 +126,7 @@ in
     type = with types; attrsOf etcdSubmodule;
     description = ''
       etcd remote state
-      https://www.terraform.io/docs/backends/types/etcd.html
+      https://www.packer.io/docs/backends/types/etcd.html
     '';
   };
 
@@ -139,7 +139,7 @@ in
         let
           rule = backend:
             mkIf (config.backend."${backend}" != null) {
-              terraform."backend"."${backend}" = config.backend."${backend}";
+              packer."backend"."${backend}" = config.backend."${backend}";
             };
 
           backendConfigs = map (backend: config.backend."${backend}") backends;
@@ -157,7 +157,7 @@ in
 
           remote = backend:
             mkIf (config.remote_state."${backend}" != { }) {
-              data."terraform_remote_state" = mapAttrs
+              data."packer_remote_state" = mapAttrs
                 (name: value: {
                   config = value;
                   backend = "${backend}";
@@ -166,7 +166,7 @@ in
             };
         in
         mkAssert (length allRemoteStates == length uniqueRemoteStates)
-          "You defined multiple terraform_states with the same name!"
+          "You defined multiple packer_states with the same name!"
           (mkMerge (map remote backends));
     in
     mkMerge [ backendConfigurations remoteConfigurations ];

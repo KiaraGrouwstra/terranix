@@ -1,7 +1,7 @@
 <refsection xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" >
   <title>DESCRIPTION</title>
   <para>
-    Packerix is a NixOS way to generate terraform json. You can create
+    Packerix is a NixOS way to generate packer json. You can create
     modules like you would in NixOS.
   </para>
   <variablelist spacing="compact">
@@ -34,10 +34,10 @@ packerix | jq
 packerix ./path/my-config.nix | jq
 </programlisting>
     <para>
-      To create a JSON file and run terraform
+      To create a JSON file and run packer
     </para>
     <programlisting>
-packerix &gt; config.tf.json &amp;&amp; terraform init &amp;&amp; terraform apply
+packerix &gt; config.tf.json &amp;&amp; packer init &amp;&amp; packer apply
 </programlisting>
   </refsection>
 </refsection>

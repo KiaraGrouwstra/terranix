@@ -115,7 +115,7 @@ then
       del(.output) |
       del(.provider) |
       del(.resource) |
-      del(.terraform) |
+      del(.packer) |
       del(.variable)'
 fi
 exit $NIX_BUILD_EXIT_CODE

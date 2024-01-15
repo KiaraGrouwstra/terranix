@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
   '';
 
   meta = with lib; {
-    description = "A NixOS like terraform-json generator";
+    description = "A NixOS like packer-json generator";
     homepage = "https://packerix.org";
     license = licenses.gpl3;
     platforms = platforms.unix;

@@ -2,7 +2,7 @@
 {
   imports = [
     ./provisioner.nix
-    ./terraform/backends.nix
+    ./packer/backends.nix
     ./users.nix
   ];
 }

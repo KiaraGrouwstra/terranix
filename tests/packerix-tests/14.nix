@@ -3,9 +3,9 @@
 {
   resource.a_resource.with_template = {
     templated_field = lib.tf.ref (lib.tf.template {
-      text = "A template that uses a terraform \${variable}";
+      text = "A template that uses a packer \${variable}";
       variables = {
-        variable = "some value with \${terraform} templating";
+        variable = "some value with \${packer} templating";
       };
     });
     template_from_file = lib.tf.ref (lib.tf.template {

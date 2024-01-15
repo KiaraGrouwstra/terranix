@@ -36,7 +36,7 @@ let
         config = { };
       })
     ] ++ [
-      (import ../core/terraform-options.nix {
+      (import ../core/packer-options.nix {
         inherit lib pkgs;
         config = { };
       })

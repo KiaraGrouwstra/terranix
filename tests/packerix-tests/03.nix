@@ -3,7 +3,7 @@
 
   remote_state.s3.test = {
     bucket = "some-where-over-the-rainbow";
-    key = "my-terraform-state.tfstate";
+    key = "my-packer-state.tfstate";
     region = "eu-central-1";
   };
 

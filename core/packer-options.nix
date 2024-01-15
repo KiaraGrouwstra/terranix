@@ -52,7 +52,7 @@ in
         Data objects, are queries to use resources which
         are already exist, as if they are created by a the resource
         option.
-        See for more details : https://www.terraform.io/docs/configuration/data-sources.html
+        See for more details : https://www.packer.io/docs/configuration/data-sources.html
       '';
     };
     locals = mkMagicMergeOption {
@@ -63,9 +63,9 @@ in
         };
       };
       description = ''
-        Define terraform variables with file scope.
-        Like modules this is terraform intern and terranix has better ways.
-        See for more details : https://www.terraform.io/docs/configuration/locals.html
+        Define packer variables with file scope.
+        Like modules this is packer intern and packerix has better ways.
+        See for more details : https://www.packer.io/docs/configuration/locals.html
       '';
     };
     module = mkMagicMergeOption {
@@ -73,11 +73,11 @@ in
         module.consul = { source = "github.com/hashicorp/example"; };
       };
       description = ''
-        A terraform module, to define multiple resources,
+        A packer module, to define multiple resources,
         for sharing or duplication.
-        The terraform module system, and has nothing to
-        do with the module system of terranix or nixos.
-        See for more details : https://www.terraform.io/docs/configuration/modules.html
+        The packer module system, and has nothing to
+        do with the module system of packerix or nixos.
+        See for more details : https://www.packer.io/docs/configuration/modules.html
       '';
     };
     output = mkMagicMergeOption {
@@ -85,8 +85,8 @@ in
         output.instance_ip_addr.value = "aws_instance.server.private_ip";
       };
       description = ''
-        Useful in combination with terraform_remote_state.
-        See for more details : https://www.terraform.io/docs/configuration/outputs.html
+        Useful in combination with packer_remote_state.
+        See for more details : https://www.packer.io/docs/configuration/outputs.html
       '';
     };
     provider = mkMagicMergeOption {
@@ -99,9 +99,9 @@ in
       description = ''
         Define you API connection.
         Don't use secrets in here, they will be visible in the nix-store and the resulting
-        config.tf.json. Instead use terraform variables.
-        See for more details : https://www.terraform.io/docs/configuration/providers.html
-        or https://www.terraform.io/docs/providers/index.html
+        config.tf.json. Instead use packer variables.
+        See for more details : https://www.packer.io/docs/configuration/providers.html
+        or https://www.packer.io/docs/providers/index.html
       '';
     };
     resource = mkReferenceableOption {
@@ -112,8 +112,8 @@ in
         };
       };
       description = ''
-        The backbone of terraform and terranix to change and create state.
-        See for more details : https://www.terraform.io/docs/configuration/resources.html
+        The backbone of packer and packerix to change and create state.
+        See for more details : https://www.packer.io/docs/configuration/resources.html
       '';
     };
     variable = mkMagicMergeOption {
@@ -126,8 +126,8 @@ in
       };
       description = ''
         Input Variables, which can be set by `--var=name` or by environment variables prefixt with `TF_VAR_`.
-        Usually used in terraform modules or to ask for API tokens.
-        See for more details : https://www.terraform.io/docs/configuration/variables.html
+        Usually used in packer modules or to ask for API tokens.
+        See for more details : https://www.packer.io/docs/configuration/variables.html
       '';
     };
     packer = mkReferenceableOption {

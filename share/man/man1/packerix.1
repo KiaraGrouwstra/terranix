@@ -38,7 +38,7 @@ packerix \- reconfigure a user environment
 \-\-help
 .SH "DESCRIPTION"
 .PP
-Packerix is a NixOS way to generate terraform json\&. You can create modules like you would in NixOS\&.
+Packerix is a NixOS way to generate packer json\&. You can create modules like you would in NixOS\&.
 .PP
 path
 .RS 4
@@ -77,13 +77,13 @@ packerix \&./path/my\-config\&.nix | jq
 .RE
 .\}
 .PP
-To create a JSON file and run terraform
+To create a JSON file and run packer
 .sp
 .if n \{\
 .RS 4
 .\}
 .nf
-packerix > config\&.tf\&.json && terraform init && terraform apply
+packerix > config\&.tf\&.json && packer init && packer apply
 .fi
 .if n \{\
 .RE
@@ -163,7 +163,7 @@ and
 provider\&.
 .SS "multi line strings"
 .PP
-In terraform you can create multi line strings using the
+In packer you can create multi line strings using the
 heredoc
 style
 .sp
@@ -202,7 +202,7 @@ variable\&.multiline\&.description = \*(Aq\*(Aq
 .PP
 The form
 ${expression}
-is used by packerix and terraform\&. So, if you want to use a terraform expression in packerix, you have to escape it\&. There are the two context, multi and single line strings\&.
+is used by packerix and packer\&. So, if you want to use a packer expression in packerix, you have to escape it\&. There are the two context, multi and single line strings\&.
 .sp
 .it 1 an-trap
 .nr an-no-space-flag 1
@@ -341,7 +341,7 @@ Now you can set the following
 .\}
 .SH "CONDITIONS AND ASSERTIONS"
 .PP
-Conditions and assertions can be used to throw human readable exceptions and to create conditional terraform resources or parameters\&.
+Conditions and assertions can be used to throw human readable exceptions and to create conditional packer resources or parameters\&.
 .SS "mkAssert"
 .PP
 To make an assertion in your module use the

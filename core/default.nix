@@ -49,7 +49,7 @@ let
   evaluateConfiguration = configuration:
     lib'.evalModules {
       modules = [
-        { imports = [ ./terraform-options.nix ../modules ]; }
+        { imports = [ ./packer-options.nix ../modules ]; }
         { _module.args = { inherit pkgs; }; }
         configuration
       ];
@@ -58,7 +58,7 @@ let
 
   # create the final result
   # by whitelisting every
-  # parameter which is needed by terraform
+  # parameter which is needed by packer
   packerix = configuration:
     let
       evaluated = evaluateConfiguration configuration;

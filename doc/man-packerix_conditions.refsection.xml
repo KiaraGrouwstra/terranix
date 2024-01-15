@@ -2,7 +2,7 @@
   <title>CONDITIONS AND ASSERTIONS</title>
   <para>
     Conditions and assertions can be used to throw human readable
-    exceptions and to create conditional terraform resources or
+    exceptions and to create conditional packer resources or
     parameters.
   </para>
   <refsection xml:id="mkassert">

@@ -40,7 +40,7 @@ resource.&quot;aws_instance&quot;.&quot;web&quot; = {
   <refsection xml:id="multi-line-strings">
     <title>multi line strings</title>
     <para>
-      In terraform you can create multi line strings using the
+      In packer you can create multi line strings using the
       <literal>heredoc</literal> style
     </para>
     <programlisting>
@@ -68,7 +68,7 @@ variable.multiline.description = ''
     <title>escaping expressions</title>
     <para>
       The form <literal>${expression}</literal> is used by packerix and
-      terraform. So, if you want to use a terraform expression in
+      packer. So, if you want to use a packer expression in
       packerix, you have to escape it. There are the two context, multi
       and single line strings.
     </para>

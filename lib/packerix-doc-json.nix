@@ -35,7 +35,7 @@ let
 
   modulesDocs = nmd.buildModulesDocs {
     modules = packerix_modules ++ [
-      (import ../core/terraform-options.nix {
+      (import ../core/packer-options.nix {
         inherit lib pkgs;
         config = { };
       })

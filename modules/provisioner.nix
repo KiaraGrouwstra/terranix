@@ -14,7 +14,7 @@ in
       type = with types; str;
       description = ''
         PrivateKey for provisioning via ssh access
-        see https://www.terraform.io/docs/provisioners/connection.html
+        see https://www.packer.io/docs/provisioners/connection.html
 
         This is an agnostic option, option-authors should use this options
         to implement server provisioning.

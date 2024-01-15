@@ -2,7 +2,7 @@
 # packerix-related helpers
 pkgs: self: super: {
   tf = {
-    # escape ${} to create a terraform reference string
+    # escape ${} to create a packer reference string
     ref = ref: "\${${ref}}";
 
     # easier way to create templatefile() invocations

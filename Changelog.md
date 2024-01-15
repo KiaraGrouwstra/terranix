@@ -10,7 +10,7 @@
 
 ## [2.6.0] 2023-05-24
 
-- Add `tfRef` function to create terraform references.
+- Add `tfRef` function to create packer references.
 - refactor tests
 - pin nixpkgs due to different nixpkgs versions
 - make nix flake check not complain anymore
@@ -61,7 +61,7 @@
 - add Release-Checklist.md
 - add Changelog.md
 - add magic merge tests
-- add magicMergeOption for core options. Now all the terraform parameters will be merged magically.
+- add magicMergeOption for core options. Now all the packer parameters will be merged magically.
 - improve core options documentation
 - terrranix-doc: add path and url parameter
 - add multi line string documentation
@@ -84,7 +84,7 @@
 
 - add man-pages for packerix-doc commands
 - module cleanup and refactoring
-- add terraform-doc-man
+- add packer-doc-man
 - add packerix-doc-json
 - add ssh key to aws example
 - add nixos-server-on-aws example

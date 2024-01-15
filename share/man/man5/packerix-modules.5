@@ -43,7 +43,7 @@ config\&.nix:
 .PP
 \fBbackend\&.etcd\fR
 .RS 4
-etcd backend https://www\&.terraform\&.io/docs/backends/types/etcd\&.html
+etcd backend https://www\&.packer\&.io/docs/backends/types/etcd\&.html
 .sp
 \fIType:\fR
 null or submodule
@@ -53,7 +53,7 @@ null
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -66,7 +66,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -82,7 +82,7 @@ null
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -95,7 +95,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -111,13 +111,13 @@ null
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
 \fBbackend\&.local\fR
 .RS 4
-local backend https://www\&.terraform\&.io/docs/backends/types/local\&.html
+local backend https://www\&.packer\&.io/docs/backends/types/local\&.html
 .sp
 \fIType:\fR
 null or submodule
@@ -127,7 +127,7 @@ null
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -140,13 +140,13 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
 \fBbackend\&.s3\fR
 .RS 4
-s3 backend https://www\&.terraform\&.io/docs/backends/types/s3\&.html
+s3 backend https://www\&.packer\&.io/docs/backends/types/s3\&.html
 .sp
 \fIType:\fR
 null or submodule
@@ -156,7 +156,7 @@ null
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -169,7 +169,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -182,7 +182,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -195,13 +195,13 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
 \fBdata\fR
 .RS 4
-Data objects, are queries to use resources which are already exist, as if they are created by a the resource option\&. See for more details : https://www\&.terraform\&.io/docs/configuration/data\-sources\&.html
+Data objects, are queries to use resources which are already exist, as if they are created by a the resource option\&. See for more details : https://www\&.packer\&.io/docs/configuration/data\-sources\&.html
 .sp
 \fIType:\fR
 bool, int, float or str
@@ -215,7 +215,7 @@ bool, int, float or str
 .PP
 \fBlocals\fR
 .RS 4
-Define terraform variables with file scope\&. Like modules this is terraform intern and packerix has better ways\&. See for more details : https://www\&.terraform\&.io/docs/configuration/locals\&.html
+Define packer variables with file scope\&. Like modules this is packer intern and packerix has better ways\&. See for more details : https://www\&.packer\&.io/docs/configuration/locals\&.html
 .sp
 \fIType:\fR
 bool, int, float or str
@@ -229,7 +229,7 @@ bool, int, float or str
 .PP
 \fBmodule\fR
 .RS 4
-A terraform module, to define multiple resources, for sharing or duplication\&. The terraform module system, and has nothing to do with the module system of packerix or nixos\&. See for more details : https://www\&.terraform\&.io/docs/configuration/modules\&.html
+A packer module, to define multiple resources, for sharing or duplication\&. The packer module system, and has nothing to do with the module system of packerix or nixos\&. See for more details : https://www\&.packer\&.io/docs/configuration/modules\&.html
 .sp
 \fIType:\fR
 bool, int, float or str
@@ -243,7 +243,7 @@ bool, int, float or str
 .PP
 \fBoutput\fR
 .RS 4
-Useful in combination with terraform_remote_state\&. See for more details : https://www\&.terraform\&.io/docs/configuration/outputs\&.html
+Useful in combination with packer_remote_state\&. See for more details : https://www\&.packer\&.io/docs/configuration/outputs\&.html
 .sp
 \fIType:\fR
 bool, int, float or str
@@ -257,7 +257,7 @@ bool, int, float or str
 .PP
 \fBprovider\fR
 .RS 4
-Define you API connection\&. Don\*(Aqt use secrets in here, they will be visible in the nix\-store and the resulting config\&.tf\&.json\&. Instead use terraform variables\&. See for more details : https://www\&.terraform\&.io/docs/configuration/providers\&.html or https://www\&.terraform\&.io/docs/providers/index\&.html
+Define you API connection\&. Don\*(Aqt use secrets in here, they will be visible in the nix\-store and the resulting config\&.tf\&.json\&. Instead use packer variables\&. See for more details : https://www\&.packer\&.io/docs/configuration/providers\&.html or https://www\&.packer\&.io/docs/providers/index\&.html
 .sp
 \fIType:\fR
 bool, int, float or str
@@ -271,7 +271,7 @@ bool, int, float or str
 .PP
 \fBprovisioner\&.privateKeyFile\fR
 .RS 4
-PrivateKey for provisioning via ssh access see https://www\&.terraform\&.io/docs/provisioners/connection\&.html This is an agnostic option, option\-authors should use this options to implement server provisioning\&.
+PrivateKey for provisioning via ssh access see https://www\&.packer\&.io/docs/provisioners/connection\&.html This is an agnostic option, option\-authors should use this options to implement server provisioning\&.
 .sp
 \fIType:\fR
 string
@@ -287,7 +287,7 @@ string
 .PP
 \fBremote_state\&.etcd\fR
 .RS 4
-etcd remote state https://www\&.terraform\&.io/docs/backends/types/etcd\&.html
+etcd remote state https://www\&.packer\&.io/docs/backends/types/etcd\&.html
 .sp
 \fIType:\fR
 attribute set of submodules
@@ -297,7 +297,7 @@ attribute set of submodules
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -310,7 +310,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -326,7 +326,7 @@ null
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -339,7 +339,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -355,13 +355,13 @@ null
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
 \fBremote_state\&.local\fR
 .RS 4
-local remote state https://www\&.terraform\&.io/docs/backends/types/local\&.html
+local remote state https://www\&.packer\&.io/docs/backends/types/local\&.html
 .sp
 \fIType:\fR
 attribute set of submodules
@@ -371,7 +371,7 @@ attribute set of submodules
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -384,13 +384,13 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
 \fBremote_state\&.s3\fR
 .RS 4
-s3 remote state https://www\&.terraform\&.io/docs/backends/types/s3\&.html
+s3 remote state https://www\&.packer\&.io/docs/backends/types/s3\&.html
 .sp
 \fIType:\fR
 attribute set of submodules
@@ -400,7 +400,7 @@ attribute set of submodules
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -413,7 +413,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -426,7 +426,7 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
@@ -439,13 +439,13 @@ string
 .sp
 \fIDeclared by:\fR
 .RS 4
-\m[blue]\fB<packerix/modules/terraform/backends\&.nix>\fR\m[]
+\m[blue]\fB<packerix/modules/packer/backends\&.nix>\fR\m[]
 .RE
 .RE
 .PP
 \fBresource\fR
 .RS 4
-The backbone of terraform and packerix to change and create state\&. See for more details : https://www\&.terraform\&.io/docs/configuration/resources\&.html
+The backbone of packer and packerix to change and create state\&. See for more details : https://www\&.packer\&.io/docs/configuration/resources\&.html
 .sp
 \fIType:\fR
 bool, int, float or str
@@ -457,9 +457,9 @@ bool, int, float or str
 { resource = { aws_instance = { web = { ami = "ami\-a1b2c3d4"; instance_type = "t2\&.micro"; } ; } ; } ; }
 .RE
 .PP
-\fBterraform\fR
+\fBpacker\fR
 .RS 4
-Terraform configuration\&. But for backends have a look at the packerix options backend\&.etcd, backend\&.local and backend\&.s3\&. See for more details : https://www\&.terraform\&.io/docs/configuration/terraform\&.html
+Terraform configuration\&. But for backends have a look at the packerix options backend\&.etcd, backend\&.local and backend\&.s3\&. See for more details : https://www\&.packer\&.io/docs/configuration/packer\&.html
 .sp
 \fIType:\fR
 bool, int, float or str
@@ -468,7 +468,7 @@ bool, int, float or str
 { }
 .sp
 \fIExample:\fR
-{ terraform = { backend = { s3 = { bucket = "mybucket"; key = "path/to/my/key"; region = "us\-east\-1"; } ; } ; } ; }
+{ packer = { backend = { s3 = { bucket = "mybucket"; key = "path/to/my/key"; region = "us\-east\-1"; } ; } ; } ; }
 .RE
 .PP
 \fBusers\fR
@@ -511,7 +511,7 @@ null
 .PP
 \fBvariable\fR
 .RS 4
-Input Variables, which can be set by `\-\-var=name` or by environment variables prefixt with `TF_VAR_`\&. Usually used in terraform modules or to ask for API tokens\&. See for more details : https://www\&.terraform\&.io/docs/configuration/variables\&.html
+Input Variables, which can be set by `\-\-var=name` or by environment variables prefixt with `TF_VAR_`\&. Usually used in packer modules or to ask for API tokens\&. See for more details : https://www\&.packer\&.io/docs/configuration/variables\&.html
 .sp
 \fIType:\fR
 bool, int, float or str

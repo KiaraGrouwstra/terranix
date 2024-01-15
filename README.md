@@ -1,5 +1,5 @@
 
-A NixOS way to create `terraform.json` files.
+A NixOS way to create `packer.json` files.
 
 # Documentation
 

@@ -1,6 +1,6 @@
 # DESCRIPTION
 
-Packerix is a NixOS way to generate terraform json.
+Packerix is a NixOS way to generate packer json.
 You can create modules like you would in NixOS.
 
 path
@@ -21,8 +21,8 @@ To create a JSON file out of a file `./path/my-config.nix` run
 packerix ./path/my-config.nix | jq
 ```
 
-To create a JSON file and run terraform
+To create a JSON file and run packer
 
 ```shell
-packerix > config.tf.json && terraform init && terraform apply
+packerix > config.tf.json && packer init && packer apply
 ```

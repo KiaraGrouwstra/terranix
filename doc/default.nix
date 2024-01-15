@@ -31,7 +31,7 @@ let
   hmModulesDocs = nmd.buildModulesDocs {
     modules =
       [
-        (import ../core/terraform-options.nix {
+        (import ../core/packer-options.nix {
           inherit lib pkgs;
           config = { };
         })

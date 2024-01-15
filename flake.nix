@@ -43,7 +43,7 @@
       devShells.default = pkgs.mkShell {
         buildInputs =
           [
-            pkgs.terraform_0_15
+            pkgs.packer
             self.packages.${system}.packerix
             pkgs.treefmt
             pkgs.nixpkgs-fmt
@@ -101,7 +101,7 @@
       formatter = pkgs.treefmt;
     })) // {
 
-      # terraformConfiguration ast, if you want to run
+      # packerConfiguration ast, if you want to run
       # packerix in the repl.
       lib.packerixConfigurationAst =
         { system ? ""
@@ -173,7 +173,7 @@
                 del(.output) |
                 del(.provider) |
                 del(.resource) |
-                del(.terraform) |
+                del(.packer) |
                 del(.variable)
                 ' > $out
           '';
@@ -214,7 +214,7 @@
                     del(.output) |
                     del(.provider) |
                     del(.resource) |
-                    del(.terraform) |
+                    del(.packer) |
                     del(.variable)
                     ' > $out/options.json
               '';
