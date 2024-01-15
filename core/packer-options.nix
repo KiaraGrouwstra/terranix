@@ -64,7 +64,7 @@ in
       };
       description = ''
         Define terraform variables with file scope.
-        Like modules this is terraform intern and packerix has better ways.
+        Like modules this is terraform intern and terranix has better ways.
         See for more details : https://www.terraform.io/docs/configuration/locals.html
       '';
     };
@@ -76,7 +76,7 @@ in
         A terraform module, to define multiple resources,
         for sharing or duplication.
         The terraform module system, and has nothing to
-        do with the module system of packerix or nixos.
+        do with the module system of terranix or nixos.
         See for more details : https://www.terraform.io/docs/configuration/modules.html
       '';
     };
@@ -112,7 +112,7 @@ in
         };
       };
       description = ''
-        The backbone of terraform and packerix to change and create state.
+        The backbone of terraform and terranix to change and create state.
         See for more details : https://www.terraform.io/docs/configuration/resources.html
       '';
     };
